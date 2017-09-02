@@ -1,0 +1,12 @@
+{
+  "name": "child-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Server.js",
+  "author": "",
+  "scripts": {
+     "test": "echo \"Error: no test specified\" && exit 1",
+     "start": "node Server.js"
+   },
+  "license": "ISC"
+}

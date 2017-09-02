@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Child Tracker</title>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+
+      var socket= io("https://childtracking.herokuapp.com");
+    //  var lat=$('#lat').val();
+    //  var long=$('#long').val();
+      $(document).ready(function(){
+        $('#btn').click(function(){
+            socket.emit("latData",$('#lat').val());
+            socket.emit("longData",$('#long').val());
+        });
+        $("#noti").click(function(){
+          socket.emit("SOS","DO IT!!!!")
+        });
+
+      });
+    </script>
+
+  </head>
+
+  <body style="background-color:powderblue;">
+    <div>
+      Latitude: <input type="text" id="lat"/>
+    </div>
+    <div>
+      Longitude: <input type="text" id="long"/>
+    </div>
+    <div><input type ="button" id="btn" value="send"><br>
+    <div><input type ="button" id="noti" value="Send notification"><br>
+
+  </body>
+</html>
